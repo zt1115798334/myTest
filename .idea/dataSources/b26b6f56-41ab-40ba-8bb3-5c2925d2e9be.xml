@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="jdjr@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="jdjr">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="jdjrdata"/>
+    <schema id="5" parent="1" name="jdjropinion"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="springboot"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="test_table"/>
+    <schema id="12" parent="1" name="world"/>
+    <table id="13" parent="2" name="t_event_category">
+      <Comment>事件分类信息表</Comment>
+    </table>
+    <table id="14" parent="2" name="t_group">
+      <Comment>企业分组信息表</Comment>
+    </table>
+    <table id="15" parent="2" name="t_group_monitor_enterprise">
+      <Comment>企业分组和监控企业关联信息表</Comment>
+    </table>
+    <table id="16" parent="2" name="t_keyword_warning">
+      <Comment>关键词预警信息表</Comment>
+    </table>
+    <table id="17" parent="2" name="t_media">
+      <Comment>媒体信息表</Comment>
+    </table>
+    <table id="18" parent="2" name="t_media_type">
+      <Comment>媒体类型信息表</Comment>
+    </table>
+    <table id="19" parent="2" name="t_monitor_enterprise">
+      <Comment>监控企业信息表</Comment>
+    </table>
+    <table id="20" parent="2" name="t_threshold_warning">
+      <Comment>阈值预警信息表</Comment>
+    </table>
+    <table id="21" parent="2" name="t_user_enterprise">
+      <Comment>用户企业关联信息表，用于存储用户和企业的关联信息</Comment>
+    </table>
+    <table id="22" parent="2" name="t_userbase">
+      <Comment>用户信息表</Comment>
+    </table>
+    <table id="23" parent="2" name="t_warning_receiver">
+      <Comment>预警接收人信息表</Comment>
+    </table>
+    <column id="24" parent="13" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="13" name="c_name">
+      <Position>2</Position>
+      <Comment>事件分类名称</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="13" name="c_type">
+      <Position>3</Position>
+      <Comment>事件分类的类型（系统内置；自定义）</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="13" name="keywords">
+      <Position>4</Position>
+      <Comment>事件分类的关键词</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="13" name="c_status">
+      <Position>5</Position>
+      <Comment>状态：启用；停用</Comment>
+      <DataType>char(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="13" name="created_date">
+      <Position>6</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="13" name="created_user">
+      <Position>7</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="13" name="modified_date">
+      <Position>8</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="13" name="modified_user">
+      <Position>9</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="33" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="14" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="14" name="user_account">
+      <Position>2</Position>
+      <Comment>用户账号，关联t_userbase表的user_account</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="14" name="group_name">
+      <Position>3</Position>
+      <Comment>组名称</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="14" name="created_date">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="14" name="created_user">
+      <Position>5</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="14" name="modified_date">
+      <Position>6</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="14" name="modified_user">
+      <Position>7</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="41" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="15" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="15" name="group_id">
+      <Position>2</Position>
+      <Comment>分组id，关联t_group表的id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="15" name="enterprise_id">
+      <Position>3</Position>
+      <Comment>企业id，关联t_monitor_enterprise表的id</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="15" name="created_date">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="15" name="created_user">
+      <Position>5</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="15" name="modified_date">
+      <Position>6</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="15" name="modified_user">
+      <Position>7</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="49" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="16" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="16" name="is_enabled_red">
+      <Position>2</Position>
+      <Comment>是否开启红色预警，开启：是；关闭：否</Comment>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="52" parent="16" name="red_keywords">
+      <Position>3</Position>
+      <Comment>红色预警关键词，多个关键词用“，”分隔</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="53" parent="16" name="is_enabled_orange">
+      <Position>4</Position>
+      <Comment>是否开启橙色预警，开启：是；关闭：否</Comment>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="54" parent="16" name="orange_keywords">
+      <Position>5</Position>
+      <Comment>橙色预警关键词，多个关键词用“，”分隔</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="55" parent="16" name="is_enabled_yellow">
+      <Position>6</Position>
+      <Comment>是否开启黄色预警，开启：是；关闭：否</Comment>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="56" parent="16" name="yellow_keywords">
+      <Position>7</Position>
+      <Comment>黄色预警关键词，多个关键词用“，”分隔</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="57" parent="16" name="group_id">
+      <Position>8</Position>
+      <Comment>企业分组id，关联t_group表的id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="16" name="group_rule_name">
+      <Position>9</Position>
+      <Comment>预警规则名称</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="16" name="created_date">
+      <Position>10</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="16" name="created_user">
+      <Position>11</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="16" name="modified_date">
+      <Position>12</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="16" name="modified_user">
+      <Position>13</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="16" name="is_valid">
+      <Position>14</Position>
+      <Comment>是否有效，是；否</Comment>
+      <DataType>char(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="64" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="65" parent="17" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="66" parent="17" name="media_name">
+      <Position>2</Position>
+      <Comment>媒体名称</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="17" name="media_url">
+      <Position>3</Position>
+      <Comment>媒体地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="17" name="created_date">
+      <Position>4</Position>
+      <Comment>创建日期</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="17" name="created_user">
+      <Position>5</Position>
+      <Comment>创建用户</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="17" name="modified_date">
+      <Position>6</Position>
+      <Comment>更新日期</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="17" name="modified_user">
+      <Position>7</Position>
+      <Comment>修改用户</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="17" name="url_md5">
+      <Position>8</Position>
+      <Comment>URL的MD5值</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="17" name="weight">
+      <Position>9</Position>
+      <Comment> 媒体权重</Comment>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <key id="74" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="75" parent="18" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="76" parent="18" name="media_name">
+      <Position>2</Position>
+      <Comment>媒体名称</Comment>
+      <DataType>varchar(64)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="18" name="media_url">
+      <Position>3</Position>
+      <Comment>媒体地址</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="18" name="media_type">
+      <Position>4</Position>
+      <Comment>媒体类型</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="18" name="created_date">
+      <Position>5</Position>
+      <Comment>创建日期</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="18" name="created_user">
+      <Position>6</Position>
+      <Comment>创建用户</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="18" name="modified_date">
+      <Position>7</Position>
+      <Comment>更新日期</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="18" name="modified_user">
+      <Position>8</Position>
+      <Comment>修改用户</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="83" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="84" parent="19" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="85" parent="19" name="enterprise_name">
+      <Position>2</Position>
+      <Comment> 企业名称</Comment>
+      <DataType>varchar(128)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="86" parent="19" name="expire_date">
+      <Position>3</Position>
+      <Comment>到期时间，默认值：创建时间+3个月</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="19" name="c_status">
+      <Position>4</Position>
+      <Comment>状态：监控中，已到期</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="88" parent="19" name="created_date">
+      <Position>5</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="89" parent="19" name="created_user">
+      <Position>6</Position>
+      <Comment>创建用户</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="90" parent="19" name="modified_date">
+      <Position>7</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="91" parent="19" name="modified_user">
+      <Position>8</Position>
+      <Comment>更新用户</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="92" parent="19" name="user_account">
+      <Position>9</Position>
+      <Comment>关联t_userbase表的user_account</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="93" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="94" parent="20" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="95" parent="20" name="is_enabled_red">
+      <Position>2</Position>
+      <Comment>是否开启红色预警，开启：是；关闭：否</Comment>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="96" parent="20" name="red_pressure_index">
+      <Position>3</Position>
+      <Comment>红色预警的压力指数</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="97" parent="20" name="red_negative_proportion">
+      <Position>4</Position>
+      <Comment>红色预警的负面占比</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="98" parent="20" name="number_of_red_opinion">
+      <Position>5</Position>
+      <Comment>红色预警的舆情数量</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="99" parent="20" name="is_enabled_orange">
+      <Position>6</Position>
+      <Comment>是否开启橙色预警，开启：是；关闭：否</Comment>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="100" parent="20" name="orange_pressure_index">
+      <Position>7</Position>
+      <Comment>橙色预警的压力指数</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="101" parent="20" name="orange_negative_proportion">
+      <Position>8</Position>
+      <Comment>橙色预警的负面占比</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="102" parent="20" name="number_of_orange_opinion">
+      <Position>9</Position>
+      <Comment>橙色预警的舆情数量</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="103" parent="20" name="is_enabled_yellow">
+      <Position>10</Position>
+      <Comment>是否开启黄色预警，开启：是；关闭：否</Comment>
+      <DataType>char(2)|0</DataType>
+    </column>
+    <column id="104" parent="20" name="yellow_pressure_index">
+      <Position>11</Position>
+      <Comment>黄色预警的压力指数</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="105" parent="20" name="yellow_negative_proportion">
+      <Position>12</Position>
+      <Comment>黄色预警的负面占比</Comment>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="106" parent="20" name="number_of_yellow_opinion">
+      <Position>13</Position>
+      <Comment>黄色预警的舆情数量</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="107" parent="20" name="group_id">
+      <Position>14</Position>
+      <Comment>企业分组id，关联t_group表的id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="108" parent="20" name="group_rule_name">
+      <Position>15</Position>
+      <Comment>预警规则的名称</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="20" name="created_date">
+      <Position>16</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="20" name="created_user">
+      <Position>17</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="20" name="modified_date">
+      <Position>18</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="20" name="modified_user">
+      <Position>19</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="113" parent="20" name="is_valid">
+      <Position>20</Position>
+      <Comment>是否有效，是；否</Comment>
+      <DataType>char(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="114" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="115" parent="21" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="116" parent="21" name="user_account">
+      <Position>2</Position>
+      <Comment>用户账号，关联t_userbase表的user_account</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="117" parent="21" name="enterprise_id">
+      <Position>3</Position>
+      <Comment>企业ID，mongodb中的企业信息表的id</Comment>
+      <DataType>varchar(24)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="118" parent="21" name="created_date">
+      <Position>4</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="119" parent="21" name="created_user">
+      <Position>5</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="120" parent="21" name="modified_date">
+      <Position>6</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="121" parent="21" name="modified_user">
+      <Position>7</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="122" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="123" parent="22" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="124" parent="22" name="user_account">
+      <Position>2</Position>
+      <Comment>用户账号</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="125" parent="22" name="c_name">
+      <Position>3</Position>
+      <Comment>用户名称</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="126" parent="22" name="phone">
+      <Position>4</Position>
+      <Comment>手机号</Comment>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="127" parent="22" name="c_password">
+      <Position>5</Position>
+      <Comment>密码</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="128" parent="22" name="salt">
+      <Position>6</Position>
+      <Comment>盐值</Comment>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="129" parent="22" name="business_type">
+      <Position>7</Position>
+      <Comment>业务类型：贷前风险评估；贷后企业监控</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="130" parent="22" name="created_date">
+      <Position>8</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="131" parent="22" name="created_user">
+      <Position>9</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="132" parent="22" name="modified_date">
+      <Position>10</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="133" parent="22" name="modified_user">
+      <Position>11</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="134" parent="22" name="keyword_warning_state">
+      <Position>12</Position>
+      <Comment>关键词预警设置开关：是，否</Comment>
+      <DataType>char(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="135" parent="22" name="threshold_warning_state">
+      <Position>13</Position>
+      <Comment>警戒线预警设置开关：是，否</Comment>
+      <DataType>char(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="136" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="137" parent="23" name="id">
+      <Position>1</Position>
+      <Comment>主键id，自增1</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="138" parent="23" name="warning_type">
+      <Position>2</Position>
+      <Comment>预警类型（关键字预警；警戒线预警）</Comment>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="139" parent="23" name="is_enable">
+      <Position>3</Position>
+      <Comment>是否启用（是；否）</Comment>
+      <DataType>char(2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="140" parent="23" name="receiver">
+      <Position>4</Position>
+      <Comment>接收人（邮箱地址）</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="141" parent="23" name="created_date">
+      <Position>5</Position>
+      <Comment>创建时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="142" parent="23" name="created_user">
+      <Position>6</Position>
+      <Comment>创建人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="143" parent="23" name="modified_date">
+      <Position>7</Position>
+      <Comment>更新时间</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="144" parent="23" name="modified_user">
+      <Position>8</Position>
+      <Comment>更新人</Comment>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="145" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
